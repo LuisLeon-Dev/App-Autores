@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <!-- Team Member 1 -->
+    <div class="col-4">
+      <div class="card border-0 shadow">
+        <img src="{{ autor.foto }}" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">{{autor.nombre}}</h5>
+          <div class="card-text text-black-50">{{autor.pais}}</div>
+        </div>
+      </div>
+    </div> <!-- fin col-4 -->
+    <div class="col-8">
+
+      <h2>Libros escritos</h2>
+
+      <div class="row">
+        <div class="col-4" *ngFor="let libro of autor.libros">
+         
+         
+          <app-libro [libro]="libro" ></app-libro>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

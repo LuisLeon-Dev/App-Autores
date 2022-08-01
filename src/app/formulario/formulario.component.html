@@ -1,0 +1,19 @@
+<h2>{{ titulo }}</h2>
+<form class="col-3"  [formGroup]="miFormulario" (ngSubmit)="enviarDatos()"  >
+
+    <div class="mb-3">
+      <label  class="form-label">Nombre</label>
+      <input type="text" class="form-control"   formControlName="nombre">
+      <div *ngIf="!miFormulario.controls['nombre'].valid" class="form-text text-danger">El nombre contiene un error</div>
+    </div>
+
+    <div class="mb-3">
+        <label  class="form-label">Email </label>
+        <input type="email" class="form-control" formControlName="email" >
+        <div *ngIf="!miFormulario.controls['email'].valid" class="form-text text-danger">El email contiene un error</div>
+    </div>
+
+    <div *ngIf="!miFormulario.valid" class="form-text text-danger">El Formulario tiene uno o varios errores, por favor reviselo</div>
+    
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
